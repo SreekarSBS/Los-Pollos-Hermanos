@@ -1,3 +1,4 @@
+import { cloudinary } from "../utils/constants";
 const RestaurantCard = ({ resDetails }) => {
    const {
      name,
@@ -6,16 +7,17 @@ const RestaurantCard = ({ resDetails }) => {
      costForTwo,
      sla,
      cloudinaryImageId,
+
    } = resDetails.info;
  
-   const cloudinary = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
+   
  
    return (
-     <div className="card">
+     <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg hover:bg-slate-500 ">
        <div className="card-img">
-         <img src={cloudinary + cloudinaryImageId} alt={name} />
+         <img className="h-64" src={cloudinary + cloudinaryImageId} alt={name} />
        </div>
-       <h3>{name}</h3>
+       <h3 className="font-bold text-lg py-4" >{name}</h3>
        <h4>{cuisines?.slice(0, 3).join(',')}</h4>
        <h4>{avgRating} ⭐️</h4>
        <h4>{costForTwo}</h4>
@@ -24,5 +26,18 @@ const RestaurantCard = ({ resDetails }) => {
    );
  };
  
+export const withPromoted = (RestaurantCard) => {
+  return  (props) => {
+    const discount = props.resDetails?.info?.aggregatedDiscountInfoV3?.header;
+    const discount2 = props.resDetails?.info?.aggregatedDiscountInfoV3?.subHeader;
+    return <div>
+      <label className="absolute bg-green-100 text-black font-bold p-2 m-2 rounded-lg">{discount + " " + discount2}
+      </label>
+      <RestaurantCard {...props}/>
+    </div>
+  }
+}
+
+
  export default RestaurantCard;
  
