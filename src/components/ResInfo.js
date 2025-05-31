@@ -7,7 +7,7 @@ const ResInfo = () => {
   const { resId } = useParams();
   const [showIndex, setShowIndex] = useState(null);
   const restaurantInfo = useResInfo(resId);
-  if (restaurantInfo === null) return <Shimmer />;
+   if (restaurantInfo === null) return null;
   
 
   const { name, cuisines, costForTwoMessage } =
@@ -42,6 +42,7 @@ const ResInfo = () => {
 
       {categories.map((item, i) => (
         <RestaurantCategory
+          
           key={i}
           data={item?.card?.card}
           show={i == showIndex ? true : false}

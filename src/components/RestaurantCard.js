@@ -1,5 +1,7 @@
 import { cloudinary } from "../utils/constants";
 const RestaurantCard = ({ resDetails }) => {
+ 
+
    const {
      name,
      cuisines,
@@ -10,10 +12,9 @@ const RestaurantCard = ({ resDetails }) => {
 
    } = resDetails.info;
  
-   
- 
+  
    return (
-     <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg hover:bg-slate-500 ">
+     <div data-testid = "RestaurantCard" className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg hover:bg-slate-500 ">
        <div className="card-img">
          <img className="h-64" src={cloudinary + cloudinaryImageId} alt={name} />
        </div>

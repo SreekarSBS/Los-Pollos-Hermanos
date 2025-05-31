@@ -10,6 +10,7 @@ const Body = ()=>{
     const [searchText,setSearchText] = useState("");
     const [allRestaurants, setAllRestaurants] = useState([]);
     
+      
     useEffect(() => {
         fetchData();
     }, []);
@@ -36,7 +37,7 @@ const Body = ()=>{
     return <div className="body">
         <div className="search-container flex">
         <div className="Search-Bar m-4 p-4 ">
-            <input className=" border border-solid border-black mr-5" type = "text" value = {searchText} onChange={(e) => {setSearchText(e.target.value)}} ></input>
+            <input className=" border border-solid border-black mr-5" data-testid = "searchInput" type = "text" value = {searchText} onChange={(e) => {setSearchText(e.target.value)}} ></input>
             <button onClick={
                 ()=> {
                     const filteredList = allRestaurants.filter((res)=>res.info.name.toLowerCase().includes(searchText.toLowerCase()))
@@ -59,7 +60,7 @@ const Body = ()=>{
            {resList.map((restaurant) => (
             <Link  key={restaurant.info.id} to ={ "/restaurants/" + restaurant.info.id}>
            { restaurant.info.aggregatedDiscountInfoV3?
-  <PromotedRestaurantCard resDetails={restaurant} /> :  <RestaurantCard  resDetails={restaurant}/>}
+  <PromotedRestaurantCard resDetails={restaurant} /> :  <RestaurantCard  resDetails={restaurant} />}
            </Link>
         ))}
          

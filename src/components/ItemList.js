@@ -8,10 +8,10 @@ const ItemList = ({ items }) => {
     dispatch(addItem(item));
   }
   return (
-    <div>
+    <div >
       {items.map((item) => {
         return (
-          <div key={item.card.info.id} className="text-left py-2 ">
+          <div data-testid = "itemList" key={item.card.info.id} className="text-left py-2 ">
             <div className="flex justify-between">
             <div className="w-9/12" >
             <div className="font-bold">
