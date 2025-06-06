@@ -21,7 +21,7 @@ const Body = ()=>{
     const {defaultUser, setUserName} = useContext(UserContext);
     const fetchData = async () => {
         try {
-          const response = await fetch(CARDS_API);
+          const response = await fetch("/.netlify/functions/restaurants");
       
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -32,14 +32,14 @@ const Body = ()=>{
           // Now set your states safely:
           setResList(
             jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-              ?.restaurants || []
+              ?.restaurants 
           );
           setAllRestaurants(
             jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-              ?.restaurants || []
+              ?.restaurants
           );
       
-          console.log(jsonData); // Optional: check response data
+          
       
         } catch (error) {
           console.error("❌ Error fetching data:", error?.message || error);
