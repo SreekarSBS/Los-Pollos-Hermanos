@@ -10,28 +10,28 @@ const Shimmer = () => {
             </div>
      
         </div>
-    <div className="card-container flex flex-wrap">
+    <div className="card-container flex flex-wrap ">
         
-        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg "></div>
-        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg"></div>
-        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg"></div>
-        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg"></div>
-        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg"></div>
-        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg"></div>
-        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg"></div>
-        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg"></div> 
-        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg"></div>
-        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg"></div>
-        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg"></div>
-        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg"></div>
-        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg"></div>
-        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg"></div>
-        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg"></div>
-        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg"></div>
-        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg"></div>
-        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg"></div> 
-        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg"></div>
-        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg"></div>
+        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg 2xl:ml-12  "></div>
+        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg 2xl:ml-12 "></div>
+        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg 2xl:ml-12 "></div>
+        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg 2xl:ml-12 "></div>
+        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg 2xl:ml-12 "></div>
+        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg 2xl:ml-12 "></div>
+        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg 2xl:ml-12 "></div>
+        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg 2xl:ml-12 "></div> 
+        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg 2xl:ml-12 "></div>
+        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg 2xl:ml-12 "></div>
+        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg 2xl:ml-12 "></div>
+        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg 2xl:ml-12 "></div>
+        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg 2xl:ml-12 "></div>
+        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg 2xl:ml-12 "></div>
+        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg 2xl:ml-12 "></div>
+        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg 2xl:ml-12 "></div>
+        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg 2xl:ml-12 "></div>
+        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg 2xl:ml-12 "></div> 
+        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg 2xl:ml-12 "></div>
+        <div className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg 2xl:ml-12 "></div>
         
     </div>
     </div>

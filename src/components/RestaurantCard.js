@@ -14,7 +14,7 @@ const RestaurantCard = ({ resDetails }) => {
  
   
    return (
-     <div data-testid = "RestaurantCard" className="p-4 m-4 w-[250px] bg-blue-100 h-[475px] rounded-lg hover:bg-slate-500 ">
+     <div data-testid = "RestaurantCard" className="p-4 m-4 2xl:ml-12 w-[250px] bg-blue-100 h-[475px] rounded-lg hover:bg-slate-500 hoverr:shadow-lg"> 
        <div className="card-img">
          <img className="h-64" src={cloudinary + cloudinaryImageId} alt={name} />
        </div>
@@ -32,7 +32,7 @@ export const withPromoted = (RestaurantCard) => {
     const discount = props.resDetails?.info?.aggregatedDiscountInfoV3?.header;
     const discount2 = props.resDetails?.info?.aggregatedDiscountInfoV3?.subHeader;
     return <div>
-      <label className="absolute bg-green-100 text-black font-bold p-2 m-2 rounded-lg">{discount + " " + discount2}
+      <label className="2xl:ml-12 absolute bg-green-100 text-black font-bold p-2 m-2 rounded-lg">{discount + " " + discount2}
       </label>
       <RestaurantCard {...props}/>
     </div>

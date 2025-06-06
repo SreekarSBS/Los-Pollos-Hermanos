@@ -12,19 +12,29 @@ const Body = ()=>{
     
       
     useEffect(() => {
+       
+      
         fetchData();
-    }, []);
+      }, []);
+      
     console.log(resList);
     const {defaultUser, setUserName} = useContext(UserContext);
     const fetchData = async () => {
-        const data = await fetch (CARDS_API);
-    
-
-    const jsonData = await data.json();
-        console.log(jsonData);
-        setResList(jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setAllRestaurants(jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    };
+        try {
+          const response = await fetch("http://localhost:5050/api/restaurants");
+      
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+      
+          const jsonData = await response.json();
+          setResList(jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || []);
+          setAllRestaurants(jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || []);
+        } catch (error) {
+          console.error("❌ Error fetching data:", error.message);
+        }
+      };
+      
     const status = useOnlineStatus();
     if(status === false) return <h1>Check your Internet Connection and Try again</h1>
 
