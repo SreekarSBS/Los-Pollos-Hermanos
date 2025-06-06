@@ -19,32 +19,25 @@ const Body = ()=>{
       
     console.log(resList);
     const {defaultUser, setUserName} = useContext(UserContext);
-    const fetchData = async () => {
+    exports.handler = async function(event, context) {
         try {
-          const response = await fetch("/.netlify/functions/restaurants");
+          const response = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5204303&lng=73.8567437&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"); // example
       
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
+          const data = await response.json();
       
-          const jsonData = await response.json();
+          return {
+            statusCode: 200,
+            body: JSON.stringify(data),
+          };
       
-          // Now set your states safely:
-          setResList(
-            jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-              ?.restaurants || []
-          );
-          setAllRestaurants(
-            jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-              ?.restaurants || []
-          );
-      
-          console.log(jsonData); // Optional: check response data
-      
-        } catch (error) {
-          console.error("❌ Error fetching data:", error?.message || error);
+        } catch (err) {
+          return {
+            statusCode: 500,
+            body: JSON.stringify({ error: err.message }),
+          };
         }
       };
+      
       
       
     const status = useOnlineStatus();
