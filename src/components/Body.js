@@ -21,19 +21,31 @@ const Body = ()=>{
     const {defaultUser, setUserName} = useContext(UserContext);
     const fetchData = async () => {
         try {
-          const response = await fetch("http://localhost:5050/api/restaurants");
+          const response = await fetch("/.netlify/functions/restaurants");
       
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
           }
       
           const jsonData = await response.json();
-          setResList(jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || []);
-          setAllRestaurants(jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || []);
+      
+          // Now set your states safely:
+          setResList(
+            jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+              ?.restaurants || []
+          );
+          setAllRestaurants(
+            jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+              ?.restaurants || []
+          );
+      
+          console.log(jsonData); // Optional: check response data
+      
         } catch (error) {
-          console.error("❌ Error fetching data:", error.message);
+          console.error("❌ Error fetching data:", error?.message || error);
         }
       };
+      
       
     const status = useOnlineStatus();
     if(status === false) return <h1>Check your Internet Connection and Try again</h1>
