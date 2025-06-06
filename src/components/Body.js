@@ -20,7 +20,7 @@ const Body = ()=>{
     console.log(resList);
     const {defaultUser, setUserName} = useContext(UserContext);
     const fetchData = async () => {
-        try {
+       
           const response = await fetch("/.netlify/functions/restaurants");
       
           if (!response.ok) {
@@ -41,9 +41,7 @@ const Body = ()=>{
       
           console.log(jsonData); // Optional: check response data
       
-        } catch (error) {
-          console.error("❌ Error fetching data:", error?.message || error);
-        }
+        
       };
       
       
