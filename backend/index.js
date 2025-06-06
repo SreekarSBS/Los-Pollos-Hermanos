@@ -3,9 +3,7 @@ import cors from "cors";
 import fetch from "node-fetch";
 
 const app = express();
-app.use(cors({
-    origin: "http://localhost:1234", 
-  }));
+app.use(cors());
   
 
 const SWIGGY_API_URL =
