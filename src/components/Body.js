@@ -20,8 +20,11 @@ const Body = ()=>{
     console.log(resList);
     const {defaultUser, setUserName} = useContext(UserContext);
     const fetchData = async () => {
-        
+
+
+       
           const response = await fetch("/.netlify/functions/restaurants");
+
       
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
