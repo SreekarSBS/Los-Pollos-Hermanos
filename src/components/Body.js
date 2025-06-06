@@ -20,8 +20,10 @@ const Body = ()=>{
     console.log(resList);
     const {defaultUser, setUserName} = useContext(UserContext);
     const fetchData = async () => {
-        try {
-          const response = await fetch(CARDS_API);
+
+       
+          const response = await fetch("/.netlify/functions/restaurants");
+
       
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -41,9 +43,7 @@ const Body = ()=>{
       
           console.log(jsonData); // Optional: check response data
       
-        } catch (error) {
-          console.error("❌ Error fetching data:", error?.message || error);
-        }
+        
       };
       
       
