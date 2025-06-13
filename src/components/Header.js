@@ -17,7 +17,7 @@ const Header = ()=>{
         
     },[isLoggedIn])
   const {defaultUser} = useContext(UserContext);
-    return <div className="flex justify-between shadow-lg  bg-pink-100  sm: bg-green-100 ">
+    return <div className="flex justify-between shadow-lg  bg-pink-100  sm:bg-green-100 ">
         <div className="nav-logo">
             <img className="w-36" src = {LOGO_URL}/>
         </div>

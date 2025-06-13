@@ -1,9 +1,7 @@
 import fetch from "node-fetch";
 
-
 const SWIGGY_API_URL =
-  "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5204303&lng=73.8567437&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
-
+  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5204303&lng=73.8567437&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 
 export async function handler(event, context) {
   try {
@@ -30,7 +28,7 @@ export async function handler(event, context) {
     return {
       statusCode: 200,
       headers: {
-        "Access-Control-Allow-Origin": "*", // allow all or restrict to your frontend domain
+        "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify(json),
     };

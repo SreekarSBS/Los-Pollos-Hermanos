@@ -23,12 +23,8 @@ const Body = ()=>{
 
 
        
-          const response = await fetch("/.netlify/functions/restaurants");
+          const response = await fetch(CARDS_API);
 
-      
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
       
           const jsonData = await response.json();
       
